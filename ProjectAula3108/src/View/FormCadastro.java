@@ -12,6 +12,9 @@ import javax.swing.table.DefaultTableModel;
  * @author KaueR
  */
 public class FormCadastro extends javax.swing.JFrame {
+    String usuario;
+    String senha;
+    String email;
     /**
      * Creates new form FormClientes
      */
@@ -36,7 +39,7 @@ public class FormCadastro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,12 +69,12 @@ public class FormCadastro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Senha");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("Cadastrar-se");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrar.setText("Cadastrar-se");
+        btnCadastrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btnCadastrarMouseClicked(evt);
             }
         });
 
@@ -96,7 +99,7 @@ public class FormCadastro extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(163, 163, 163))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -117,7 +120,7 @@ public class FormCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -144,17 +147,18 @@ public class FormCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textUsuárioActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String usuario1 = this.textUsuário.getText();
-        String email1 = this.textEmail.getText();
-        String senha1 = this.textSenha.getText();
+    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
+        usuario = this.textUsuário.getText();
+        email = this.textEmail.getText();
+        senha = this.textSenha.getText();
         
         JOptionPane.showMessageDialog(null,"Usuário Caadastrado");
         
         FormLogin obj = new FormLogin();
         obj.setVisible(true);
         this.setVisible(false);    
-    }//GEN-LAST:event_jButton1MouseClicked
+        return;
+    }//GEN-LAST:event_btnCadastrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,7 +198,7 @@ public class FormCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cadastro;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCadastrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
